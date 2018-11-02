@@ -1,6 +1,6 @@
 function string62to10(number_code) {
   number_code = String(number_code);
-  var chars = '0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ',
+  var chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
     radix = chars.length,
     len = number_code.length,
     i = 0,
