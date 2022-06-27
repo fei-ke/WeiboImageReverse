@@ -8,8 +8,7 @@
     "128": "icon128.png"
   },
   "permissions": [
-    "contextMenus",
-    "tabs"
+    "contextMenus"
   ],
   "background": {
     "scripts": [
