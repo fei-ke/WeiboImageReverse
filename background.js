@@ -20,14 +20,18 @@ function decode(url) {
   }
 }
 
+const MENEU_ITEM_ID = 'reverse-weibo-image'
 
 chrome.contextMenus.create({
-  id: 'open',
+  id: MENEU_ITEM_ID,
   title: '查看po主',
   contexts: ['image'],
-  targetUrlPatterns: ["*://*.sinaimg.cn/*"],
-  onclick: function (info, tab) {
-    sourceUrl = 'https://weibo.com/u/' + decode(info.srcUrl);
-    chrome.tabs.create({url: sourceUrl});
-  }
+  targetUrlPatterns: ["*://*.sinaimg.cn/*"]
 });
+
+chrome.contextMenus.onClicked.addListener(function (info) {
+  if (info.menuItemId == MENEU_ITEM_ID) {
+    sourceUrl = 'https://weibo.com/u/' + decode(info.srcUrl);
+    chrome.tabs.create({ url: sourceUrl });
+  }
+})
